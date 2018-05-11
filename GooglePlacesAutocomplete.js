@@ -239,7 +239,7 @@ export default class GooglePlacesAutocomplete extends Component {
               this._onBlur();
 
               this.setState({
-                text: this._renderDescription( rowData ),
+                text: this.props.onlyName ? rowData.structured_formatting.main_text : this._renderDescription(rowData),
               });
 
               delete rowData.isLoading;
@@ -250,7 +250,7 @@ export default class GooglePlacesAutocomplete extends Component {
 
             if (this.props.autoFillOnNotFound) {
               this.setState({
-                text: this._renderDescription(rowData)
+                text: this.props.onlyName ? rowData.structured_formatting.main_text : this._renderDescription(rowData),
               });
               delete rowData.isLoading;
             }
