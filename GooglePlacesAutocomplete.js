@@ -198,7 +198,8 @@ export default class GooglePlacesAutocomplete extends Component {
         // already requesting
         return;
       }
-
+      
+      this.props.onlyName ? this.props.getText(rowData.structured_formatting.main_text) : this.props.getText(this._renderDescription(rowData))
       this._abortRequests();
 
       // display loader
