@@ -290,7 +290,7 @@ export default class GooglePlacesAutocomplete extends Component {
       this._enableRowLoader(rowData);
 
       this.setState({
-        text: this._renderDescription( rowData ),
+        text: this.props.onlyName ? rowData.structured_formatting.main_text : this._renderDescription(rowData),
       });
 
       this.triggerBlur(); // hide keyboard but not the results
@@ -299,7 +299,7 @@ export default class GooglePlacesAutocomplete extends Component {
 
     } else {
       this.setState({
-        text: this._renderDescription( rowData ),
+        text: this.props.onlyName ? rowData.structured_formatting.main_text : this._renderDescription(rowData),
       });
 
       this._onBlur();
@@ -492,7 +492,7 @@ export default class GooglePlacesAutocomplete extends Component {
 
   _onChangeText = (text) => {
     this._request(text);
-
+    this.props.getText(text)
     this.setState({
       text: text,
       listViewDisplayed: this._isMounted || this.props.autoFocus,
@@ -745,7 +745,9 @@ GooglePlacesAutocomplete.propTypes = {
   isRowScrollable: PropTypes.bool,
   text: PropTypes.string,
   textInputHide: PropTypes.bool,
-  suppressDefaultStyles: PropTypes.bool
+  suppressDefaultStyles: PropTypes.bool,
+  getText: PropTypes.func,
+  onlyName: PropTypes.bool,
 }
 GooglePlacesAutocomplete.defaultProps = {
   placeholder: 'Search',
