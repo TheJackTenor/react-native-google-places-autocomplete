@@ -24,27 +24,10 @@ const defaultStyles = {
     flex: 1,
   },
   textInputContainer: {
-    backgroundColor: '#C9C9CE',
-    height: 44,
-    borderTopColor: '#7e7e7e',
-    borderBottomColor: '#b5b5b5',
-    borderTopWidth: 1 / PixelRatio.get(),
-    borderBottomWidth: 1 / PixelRatio.get(),
-    flexDirection: 'row',
+    // empty
   },
   textInput: {
-    backgroundColor: '#FFFFFF',
-    height: 28,
-    borderRadius: 5,
-    paddingTop: 4.5,
-    paddingBottom: 4.5,
-    paddingLeft: 10,
-    paddingRight: 10,
-    marginTop: 7.5,
-    marginLeft: 8,
-    marginRight: 8,
-    fontSize: 15,
-    flex: 1
+    // empty
   },
   poweredContainer: {
     justifyContent: 'flex-end',
