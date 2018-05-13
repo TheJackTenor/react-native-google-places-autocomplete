@@ -24,7 +24,9 @@ const defaultStyles = {
     flex: 1,
   },
   textInputContainer: {
-    // empty
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   textInput: {
     // empty
